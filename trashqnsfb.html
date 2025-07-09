@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 쓰레기 분류기</title>
+  <!-- Teachable Machine 라이브러리 -->
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <!-- JS 코드 -->
+  <script src="qnsfb.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      background-color: #f8f8f8;
+    }
+
+    #webcam {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    #webcam canvas {
+      border: 3px solid #333;
+      border-radius: 12px;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    #result {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #tip {
+      font-size: 18px;
+      color: #444;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 AI 쓰레기 분류기</h1>
+
+  <!-- 웹캠 canvas 삽입 위치 -->
+  <div id="webcam"></div>
+
+  <!-- 예측 결과 및 팁 표시 -->
+  <div id="result">쓰레기 분류 결과: </div>
+  <div id="tip">재활용 방법 안내가 여기에 표시됩니다.</div>
+
+  <!-- 페이지 로드시 init() 실행 -->
+  <script>
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
